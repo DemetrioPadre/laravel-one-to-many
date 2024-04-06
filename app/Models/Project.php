@@ -11,6 +11,10 @@ class Project extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = ['title', 'content'];
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 
 
     public function getAbstract($n_chars = 30)

@@ -13,7 +13,8 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>TItolo</th>
+                        <th>Titolo</th>
+                        <th>Categoria</th>
                         <th>Slug </th>
                         <th>Estratto</th>
                         <th></th>
@@ -22,8 +23,9 @@
                     @forelse ($projects as $project)
                         <tr>
                             <td>{{ $project->id }}</td>
-                            <td>{{ $project['title'] }}</td>
-                            <td>{{ $project['slug'] }} </td>
+                            <td>{{ $project->title }}</td>
+                            <td>{{ $project->type->label }}</td>
+                            <td>{{ $project->slug }} </td>
                             <td>{{ $project->getAbstract(50) }}</td>
                             <td>
                                 <a href="{{ route('admin.project.show', $project) }}" class="btn btn-primary"><i
