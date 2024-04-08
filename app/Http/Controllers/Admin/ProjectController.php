@@ -56,6 +56,7 @@ class ProjectController extends Controller
         $project = new Project;
         $project->fill($data);
         $project->slug = Str::slug($project->title);
+
         $project->save();
 
         return redirect()->route('admin.projects.show', $project);

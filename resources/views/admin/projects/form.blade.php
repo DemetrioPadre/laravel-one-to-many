@@ -9,7 +9,7 @@
                     class="fa-solid fa-circle-left fa-beat"></i>
                 Torna alla Lista Dei Progetti</a>
 
-            {{-- @if ($errors->any())
+            @if ($errors->any())
                 <div class="alert alert-danger ">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -17,7 +17,7 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif --}}
+            @endif
             <h1 class="mb-4">{{ empty($project->id) ? 'Creazione Nuovo Progetto' : 'Modifica Progetto' }}</h1>
 
             <form action="{{ empty($project->id) ? route('admin.project.store') : route('admin.project.update', $project) }}"
@@ -39,8 +39,8 @@
                 </div>
                 <div class="col-6">
                     <label class="form-label" for="type_id">Categria</label>
-                    <select name="" id="" class="form-select">
-                        <option value="">Seleziona una categoria</option>
+                    <select name="type_id" id="type_id" class="form-select">
+                        <option value="type_id">Seleziona una categoria</option>
                         @foreach ($types as $type)
                             <option value="{{ $type->id }}">{{ $type->label }}</option>
                         @endforeach
