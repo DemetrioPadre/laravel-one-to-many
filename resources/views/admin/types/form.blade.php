@@ -29,6 +29,18 @@
                 @endif
 
                 @csrf
+                <div class="col-1">
+                    <label for="color">Colore</label>
+                    <input class="form-control" type="color" name="color" id="color">
+                </div>
+                <div class="col-11">
+                    <label for="label">Etichetta</label>
+                    <input class="form-control" type="text" name="label" id="label">
+                </div>
+
+
+
+
                 <div class="col-12">
                     <button class="btn btn-success"> <i class="fa-solid fa-floppy-disk me-1">
                         </i>{{ empty($type->id) ? 'Salva' : 'Modifica' }}</button>
