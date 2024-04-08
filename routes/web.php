@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\Guest\DashboardController as GuestDashboardController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\ProjectController;
@@ -30,6 +31,7 @@ Route::middleware('auth')
       ->name('dashboard');
 
     Route::resource('project', ProjectController::class);
+    Route::resource('types', TypeController::class);
   });
 
 require __DIR__ . '/auth.php';

@@ -11,6 +11,7 @@
             <h1 class="mb-4">Vedi Nuovo Progetto</h1>
 
             <p>{{ $project->title }}</p>
+            <p>Categoria: {!! $project->type->getBadge() !!}</p>
             <p>{{ $project->content }}</p>
 
         </div>
