@@ -29,11 +29,25 @@
                 @csrf
 
 
-                <div class="col-12">
+                <div class="col-6">
                     <label class="form-label" for="title">Titolo</label>
                     <input class="form-control " id="title" name="title" type="text"
                         value=" {{ old('title') ?? $project['title'] }}  ">
                     @error('title')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="col-6">
+                    <label class="form-label" for="type_id">Categria</label>
+                    <select name="" id="" class="form-select">
+                        <option value="">Seleziona una categoria</option>
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}">{{ $type->label }}</option>
+                        @endforeach
+
+                    </select>
+
+                    @error('type')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>

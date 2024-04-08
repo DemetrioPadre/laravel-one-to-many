@@ -19,10 +19,11 @@ class TypeSeeder extends Seeder
     public function run(Faker $faker)
     {
         $types_name = ['FrontEnd', 'BackEnd', 'FullStack'];
-        foreach ($types_name as $types_name) {
+
+        foreach ($types_name as $type_name) {
             $type = new Type();
-            $type->label = $types_name;
-            $type->color = $faker->hexcolor();
+            $type->label = $type_name;
+            $type->color = $faker->hexColor();
             $type->save();
         }
     }
